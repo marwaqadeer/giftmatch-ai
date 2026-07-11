@@ -1,13 +1,43 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProfileForm from "../components/ProfileForm";
 import ProfileCard from "../components/ProfileCard";
 
 function Dashboard() {
 
-    const [profiles, setProfiles] = useState([]);
+    const [profiles, setProfiles] = useState(() => {
+
+           return JSON.parse(
+            localStorage.getItem("profiles")
+           ) || [];
+
+    });
+
+    useEffect(() => {
+
+        localStorage.setItem(
+            "profiles",
+            JSON.stringify(profiles)
+        );
+
+    }, [profiles]);
 
     const addProfile = (newProfile) => {
-        setProfiles([...profiles, newProfile]);
+
+        setProfiles((prevProfiles) => [
+            ...prevProfiles, 
+            newProfile,
+        ]);
+
+    };
+
+    const deleteProfile = (id) => {
+
+        const updatedProfiles = profiles.filter(
+            (profile) => profile.id !== id
+        );
+
+        setProfiles(updatedProfiles);
+
     };
 
     return (
@@ -43,12 +73,16 @@ function Dashboard() {
                 ) : (
 
                     profiles.map((profile) => (
+
                         <ProfileCard
                            key={profile.id}
                            profile={profile}
+                           deleteProfile={deleteProfile}
                         />
+
                     ))
                 )}
+
             </div>
         
         </div>
