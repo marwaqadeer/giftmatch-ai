@@ -12,6 +12,8 @@ function Dashboard() {
 
     });
 
+    const [searchTerm, setSearchTerm] = useState("");
+
     useEffect(() => {
 
         localStorage.setItem(
@@ -40,6 +42,13 @@ function Dashboard() {
 
     };
 
+    const filteredProfiles = profiles.filter(
+        (profile) =>
+            profile.name
+                .toLowerCase()
+                .includes(searchTerm.toLowerCase())
+    );
+
     return (
 
         <div className="min-h-screen bg-pink-50 p-8">
@@ -51,6 +60,14 @@ function Dashboard() {
             <p className="mt-2 text-gray-600">
                 Your personal AI gift recommendation assistant
             </p>
+
+            <input
+                type="text"
+                placeholder="Search people..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full p-3 rounded-xl border bg-white mt-6"
+            />
 
             <div className="mt-8">
 
@@ -72,7 +89,7 @@ function Dashboard() {
 
                 ) : (
 
-                    profiles.map((profile) => (
+                    filteredProfiles.map((profile) => (
 
                         <ProfileCard
                            key={profile.id}
