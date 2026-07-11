@@ -49,6 +49,40 @@ function Dashboard() {
                 .includes(searchTerm.toLowerCase())
     );
 
+    const sortedProfiles = [...filteredProfiles].sort(
+        (a, b) => {
+
+            const today = new Date();
+
+            const getNextBirthday = (dateString) => {
+
+                const birthday = 
+                   new Date(dateString);
+
+                const nextBirthday =
+                   new Date(
+                    today.getFullYear(),
+                    birthday.getMonth(),
+                    birthday.getDate()
+                   );
+
+                if (nextBirthday < today) {
+
+                    nextBirthday.setFullYear(
+                        today.getFullYear() + 1
+                    );
+                }
+
+                return nextBirthday;
+            };
+
+            return (
+                getNextBirthday(a.birthday) -
+                getNextBirthday(b.birthday)
+            );
+        }
+    );
+
     return (
 
         <div className="min-h-screen bg-pink-50 p-8">
@@ -89,7 +123,7 @@ function Dashboard() {
 
                 ) : (
 
-                    filteredProfiles.map((profile) => (
+                    sortedProfiles.map((profile) => (
 
                         <ProfileCard
                            key={profile.id}
