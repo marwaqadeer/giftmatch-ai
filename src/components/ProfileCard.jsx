@@ -85,31 +85,40 @@ function ProfileCard({
 
             <button
                 onClick={handleGiftIdeas}
-                className="bg-orange-500 text-white rounded-xl px-4 py-2 mt-4"
+                disabled={isLoading}
+                className="bg-orange-500 text-white rounded-xl px-4 py-2 mt-4 disabled:bg-gray-400"
             >
-                Get Gift Ideas 🎁
+                {isLoading
+                    ? "Generating..."
+                    : "Get Gift Ideas 🎁"}
             </button>
 
             {isLoading && (
 
-                <p className="mt-3 text-purple-700">
-                    Generating gift ideas...
-                </p>
+                <div className="mt-4 flex items-center gap-3">
+
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-purple-700"></div>
+
+                    <p className="text-purple-700 font-medium">
+                        Generating gift ideas...
+                    </p>
+
+                </div>
 
             )}
 
             {giftIdeas && (
 
-                <div className="bg-purple-50 rounded-xl p-4 mt-4">
+                <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 mt-4">
 
-                    <h4 className="font-bold text-purple-700">
-                        AI Gift Ideas
+                    <h4 className="font-bold text-purple-700 text-lg">
+                        🎁 AI Gift Ideas
                     </h4>
 
-                    <p className="whitespace-pre-line mt-2">
+                    <p className="whitespace-pre-line mt-3 text-gray-700">
                         {giftIdeas}
                     </p>
-
+                    
                 </div>
                 
             )}
