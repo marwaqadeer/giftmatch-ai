@@ -5,6 +5,7 @@ function ProfileForm({ addProfile }) {
     const [name,setName] = useState("");
     const [birthday, setBirthday] = useState("");
     const [hobbies, setHobbies] = useState("");
+    const [budget, setBudget] = useState("50");
 
     const handleSubmit = (e) => {
 
@@ -15,6 +16,7 @@ function ProfileForm({ addProfile }) {
             name,
             birthday,
             hobbies,
+            budget,
         };
 
         addProfile(newProfile);
@@ -22,6 +24,7 @@ function ProfileForm({ addProfile }) {
         setName("");
         setBirthday("");
         setHobbies("");
+        setBudget("50");
     };
 
     return(
@@ -56,6 +59,26 @@ function ProfileForm({ addProfile }) {
                placeholder="Hobbies and interests"
                rows="4"
             />
+
+            <select
+               value={budget}
+               onChange={(e) => setBudget(e.target.value)}
+               className="border rounded-lg p-3 w-full mt-3"
+            >
+
+                <option value="25">
+                    Under $25
+                </option>
+
+                <option value="50">
+                    Under $50
+                </option>
+
+                <option value="100">
+                    Under $100
+                </option>
+
+            </select>
 
             <button
                type="submit"

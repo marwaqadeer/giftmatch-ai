@@ -45,7 +45,8 @@ function ProfileCard({
         try {
 
             const ideas = await generateGiftIdeas(
-                profile.hobbies
+                profile.hobbies,
+                profile.budget
             );
 
             setGiftIdeas(ideas);
@@ -77,6 +78,10 @@ function ProfileCard({
 
             <p>
                 ❤️ Hobbies: {profile.hobbies}
+            </p>
+
+            <p>
+                💰 Budget: ${profile.budget}
             </p>
 
             <p className="mt-2 text-purple-700 font-semibold">

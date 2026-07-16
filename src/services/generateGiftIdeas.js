@@ -1,4 +1,7 @@
-export async function generateGiftIdeas(hobbies) {
+export async function generateGiftIdeas(
+    hobbies,
+    budget
+) {
 
     const response = await fetch(
         "https://white-meadow-42e2.marwaqadeer2.workers.dev/",
@@ -9,6 +12,7 @@ export async function generateGiftIdeas(hobbies) {
             },
             body: JSON.stringify({
                 hobbies,
+                budget,
             }),
         }
     );
