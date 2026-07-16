@@ -85,60 +85,70 @@ function Dashboard() {
 
     return (
 
-        <div className="min-h-screen bg-pink-50 p-8">
+        <div className="min-h-screen bg-pink-50 p-6">
 
-            <h1 className="text-4xl font-bold text-purple-700">
-                🎁 GiftMatch AI
-            </h1>
+            <div className="max-w-6xl mx-auto">
 
-            <p className="mt-2 text-gray-600">
-                Your personal AI gift recommendation assistant
-            </p>
+                <h1 className="text-5xl font-bold text-purple-700 text-center">
+                    🎁 GiftMatch AI
+                </h1>
 
-            <input
-                type="text"
-                placeholder="Search people..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full p-3 rounded-xl border bg-white mt-6"
-            />
+                <p className="mt-3 text-gray-600 text-center">
+                    Your personal AI gift recommendation assistant
+                </p>
 
-            <div className="mt-8">
+                <input
+                    type="text"
+                    placeholder="Search people..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full p-4 rounded-2xl border border-purple-200 bg-white mt-6 shadow-sm"
+                />
 
-                <ProfileForm addProfile={addProfile} />
+                <div className="mt-8">
 
-                {profiles.length === 0 ? (
+                    <ProfileForm addProfile={addProfile} />
 
-                    <div className="bg-white mt-6 p-8 rounded-2xl shadow-md text-center">
+                    {profiles.length === 0 ? (
 
-                        <h2 className="text-2xl font-bold text-purple-700">
-                            No Profiles Yet
-                        </h2>
+                        <div className="bg-white mt-6 p-8 rounded-2xl shadow-md text-center">
 
-                        <p className="text-gray-500 mt-2">
-                            Add your first friend to get started! 🎁
-                        </p>
+                            <h2 className="text-2xl font-bold text-purple-700">
+                                No Profiles Yet
+                            </h2>
 
-                    </div>
+                            <p className="text-gray-500 mt-2">
+                                Add your first friend to get started! 🎁
+                            </p>
 
-                ) : (
+                        </div>
 
-                    sortedProfiles.map((profile) => (
+                    ) : (
 
-                        <ProfileCard
-                           key={profile.id}
-                           profile={profile}
-                           deleteProfile={deleteProfile}
-                        />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
 
-                    ))
-                )}
+                            {sortedProfiles.map((profile) => (
+
+                                <ProfileCard
+                                    key={profile.id}
+                                    profile={profile}
+                                    deleteProfile={deleteProfile}
+                                /> 
+
+                            ))}
+
+                        </div>
+
+                    )}
+
+                </div>
 
             </div>
-        
+
         </div>
 
     );
+
 }
 
 export default Dashboard;

@@ -65,7 +65,7 @@ function ProfileCard({
 
     return(
 
-        <div className="bg-white rounded-2xl shadow-md p-5 mt-6">
+        <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all">
 
             <h3 className="text-xl font-bold">
                 {profile.name}
@@ -86,7 +86,7 @@ function ProfileCard({
             <button
                 onClick={handleGiftIdeas}
                 disabled={isLoading}
-                className="bg-orange-500 text-white rounded-xl px-4 py-2 mt-4 disabled:bg-gray-400"
+                className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-4 py-2 mt-4 disabled:bg-gray-400 transition"
             >
                 {isLoading
                     ? "Generating..."
@@ -109,23 +109,23 @@ function ProfileCard({
 
             {giftIdeas && (
 
-                <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 mt-4">
+                <div className="bg-purple-50 border border-purple-200 rounded-xl p-5 mt-4 shadow-sm">
 
                     <h4 className="font-bold text-purple-700 text-lg">
                         🎁 AI Gift Ideas
                     </h4>
 
-                    <p className="whitespace-pre-line mt-3 text-gray-700">
+                    <div className="whitespace-pre-line mt-3 text-gray-700 leading-relaxed">
                         {giftIdeas}
-                    </p>
-                    
+                    </div>
+
                 </div>
                 
             )}
 
             <button
                 onClick={() => deleteProfile(profile.id)}
-                className="bg-red-500 text-white rounded-xl px-4 py-2 mt-3 ml-3"
+                className="bg-red-500 hover:bg-red-600 text-white rounded-xl px-4 py-2 mt-3 ml-3 transition"
 
             >
                 Delete ❌
