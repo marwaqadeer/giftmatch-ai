@@ -145,6 +145,14 @@ function ProfileCard({
                         {giftIdeas}
                     </div>
 
+                    <button 
+                        onClick={handleGiftIdeas}
+                        disabled={isLoading}
+                        className="mt-4 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl transition"
+                    >
+                        🔄 Regenerate Ideas
+                    </button>
+
                 </div>
                 
             )}
