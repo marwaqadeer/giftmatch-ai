@@ -10,6 +10,8 @@ function ProfileCard({
 
     const [isLoading, setIsLoading] = useState(false);
 
+    const [copied, setCopied] = useState(false);
+
     const calculateDaysLeft = () => {
 
         const today = new Date();
@@ -116,9 +118,28 @@ function ProfileCard({
 
                 <div className="bg-purple-50 border border-purple-200 rounded-xl p-5 mt-4 shadow-sm">
 
-                    <h4 className="font-bold text-purple-700 text-lg">
-                        🎁 AI Gift Ideas
-                    </h4>
+                    <div className="flex justify-between items-center">
+
+                        <h4 className="font-bold text-purple-700 text-lg">
+                            🎁 AI Gift Ideas
+                        </h4>
+
+                        <button
+                            onClick={() => {
+                                navigator.clipboard.writeText(giftIdeas);
+                                
+                                setCopied(true);
+
+                                setTimeout(() => {
+                                    setCopied(false);
+                                }, 2000);
+                            }}
+                            className="text-sm bg-purple-600 text-white px-3 py-1 rounded-lg hover:bg-purple-700 transition"
+                        >
+                            {copied ? "Copied ✅" : "Copy 📋"}
+                        </button>
+                        
+                    </div>
 
                     <div className="whitespace-pre-line mt-3 text-gray-700 leading-relaxed">
                         {giftIdeas}
