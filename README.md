@@ -39,23 +39,21 @@ Choosing meaningful gifts can be difficult. GiftMatch AI helps users store birth
 
 ### Dashboard
 
-![Dashboard](public/screenshots/dashboard.png)
-![Dashboard1](public/screenshots/dashboard1.png)
-
-### AI Gift Suggestion
+![Dashboard](./public/screenshots/Dashboard.png)
+![Dashboard 1](./public/screenshots/Dashboard%201.png)
 
 ### Profile Cards
 
-![Profile Card](public/screenshots/profileCard.png)
+![Profile Card](./public/screenshots/Profile%20Card.png)
 
 ### AI Gift Suggestions
 
-![AI Gift Recommendations](public/screenshots/ai-gift-recommendations.png)
+![AI Gift Recommendations](./public/screenshots/ai-gift-recommendations.png)
 
 ### Mobile View
 
-![Mobile View 1](public/screenshots/mobile-view.png)
-![Mobile View 2](public/screenshots/mobile-view1.png)
+![Mobile View 1](./public/screenshots/mobile-view.png)
+![Mobile View 2](./public/screenshots/mobile-view1.png)
 
 ## ⚙️ Installation
 
