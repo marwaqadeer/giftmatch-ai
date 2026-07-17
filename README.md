@@ -1,16 +1,97 @@
-# React + Vite
+# 🎁 GiftMatch AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GiftMatch AI is an AI-powered gift recommendation platform that help users organize information about friends and family while generating personalized gift ideas based on hobbies, interests, and budget.
 
-Currently, two official plugins are available:
+## 🌟 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://giftmatch-ai.netlify.app/
 
-## React Compiler
+## 📌 Project Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Choosing meaningful gifts can be difficult. GiftMatch AI helps users store birthdays and interests in one place and uses AI to generate thoughtful gift suggestions tailored to each person.
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Add friend and family profiles
+- Save profiles using LocalStorage
+- Search profiles by name
+- Sort profiles by upcoming birthdays
+- Birthday countdown
+- Generate AI-powered gift ideas
+- Budget-based gift recommendations
+- Copy gift ideas to clipboard
+- Regenerate gift suggestions
+- Responsive mobile-friendly design
+- Loading and empty states
+
+## 🛠 Technologies Used
+
+- React
+- Vite
+- Tailwind CSS
+- JavaScript
+- LocalStorage
+- OpenRouter API
+- Cloudflare Workers
+- Netlify
+
+## 📷 Screenshots
+
+### Dashboard
+
+![Dashboard](public/screenshots/dashboard.png)
+![Dashboard1](public/screenshots/dashboard1.png)
+
+### AI Gift Suggestion
+
+### Profile Cards
+
+![Profile Card](public/screenshots/profileCard.png)
+
+### AI Gift Suggestions
+
+![AI Gift Recommendations](public/screenshots/ai-gift-recommendations.png)
+
+### Mobile View
+
+![Mobile View 1](public/screenshots/mobile-view.png)
+![Mobile View 2](public/screenshots/mobile-view1.png)
+
+## ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/marwaqadeer/giftmatch-ai.git
+```
+
+Navigate to the project:
+
+```bash
+cd giftmatch-ai
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+## 🎯 Future Improvements
+
+- Amazon gift links
+- Gift purchase tracker
+- Email birthday reminders
+- More advanced AI recommendations
+
+## 👩‍💻 Author
+
+Marwa Qadeer
+
+CodeWeekend Web & AI Bootcamp 2026
