@@ -88,6 +88,16 @@ npm run dev
 - Email birthday reminders
 - More advanced AI recommendations
 
+## 📝 Reflection
+
+Building GiftMatch AI helped me combine React, LocalStorage, AI integration, and responsive web design into one complete project. One challenge I faced was calculating upcoming birthdays correctly. I solved this by creating logic that compares the current date with each person's birthday and automatically determines the next upcoming birthday, even if the birthday has already passed in the current year.
+
+Another challenge was integrating AI-generated gift recommendations and handling loading states while waiting for responses. I improved the user experience by adding a loading spinner, copy button, budget selector, and regenerate feature.
+
+Better prompts can improve gift suggestions by providing more context about a person's interests, preferences, and budget. More detailed prompts help the AI generate more personalized and meaningful recommendations.
+
+This project strengthened my skills in React, state management, LocalStorage, API integration, Git, GitHub, and deployment with Netlify.
+
 ## 👩‍💻 Author
 
 Marwa Qadeer
