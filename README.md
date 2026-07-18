@@ -40,7 +40,7 @@ Choosing meaningful gifts can be difficult. GiftMatch AI helps users store birth
 ### Dashboard
 
 ![Dashboard](./public/screenshots/Dashboard.png)
-![Dashboard 1](./public/screenshots/Dashboard%201.png)
+![Dashboard 1](./public/screenshots/Dashboard-1.png)
 
 ### Profile Cards
 
