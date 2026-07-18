@@ -97,6 +97,18 @@ function Dashboard() {
                     Your personal AI gift recommendation assistant
                 </p>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+
+                    <div className="bg-white p-4 rounded-xl shadow text-center">
+                        👥 Total Profiles: {profiles.length}
+                    </div>
+
+                    <div className="bg-white p-4 rounded-xl shadow text-center">
+                        🎂 Upcoming Birthdays: {profiles.length}
+                    </div>
+                    
+                </div>
+
                 <input
                     type="text"
                     placeholder="Search people..."
